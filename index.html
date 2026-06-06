@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coming Within℠ | Sovereign Spark℠ Practice</title>
+  <meta name="description" content="A Sovereign Spark℠ Practice for returning to yourself when approval, fear, or old expectations pull you away.">
+  <style>
+    :root {
+      --blue: #0f172a;
+      --gold: #d4a373;
+      --cream: #FAFAF9;
+      --muted: #E7E5E4;
+      --aqua: #93c5fd;
+      --ink: #1f2937;
+      --soft-ink: #57534e;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      --radius: 8px;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Open Sans", "Quicksand", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    img,
+    iframe {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      z-index: 10;
+      padding: 0.7rem 1rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      transform: translateY(-140%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92svh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--blue);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.32), rgba(15, 23, 42, 0.86)),
+        url("assets/coming-within-hero.png") center / cover no-repeat;
+    }
+
+    .hero-inner {
+      position: relative;
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 5rem 1.1rem 4.5rem;
+    }
+
+    .brand {
+      margin: 0 0 1.1rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      color: var(--blue);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(3rem, 13vw, 6.2rem);
+      max-width: 11ch;
+      margin-bottom: 1rem;
+    }
+
+    .hero .subtitle {
+      max-width: 640px;
+      margin: 0 0 1.5rem;
+      color: #f5f5f4;
+      font-size: clamp(1.1rem, 4vw, 1.45rem);
+    }
+
+    .meta-line {
+      color: #e7e5e4;
+      margin: 1rem 0 0;
+      font-size: 0.95rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      background: var(--blue);
+      color: var(--white);
+      font: inherit;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+      touch-action: manipulation;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn.primary {
+      background: var(--gold);
+      color: var(--blue);
+    }
+
+    .btn.secondary {
+      background: var(--white);
+      color: var(--blue);
+      border-color: var(--muted);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--blue);
+      border-color: rgba(15, 23, 42, 0.22);
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    section,
+    footer {
+      padding: 3.2rem 1.1rem;
+    }
+
+    .section-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+    }
+
+    .narrow {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.65rem;
+      color: #7c5b3f;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--soft-ink);
+    }
+
+    .warm-band {
+      background: var(--white);
+    }
+
+    .soft-band {
+      background: var(--muted);
+    }
+
+    .note-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .note-card,
+    .lesson-card,
+    .anchor-card {
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .note-card {
+      padding: 1.1rem;
+      border: 1px solid rgba(212, 163, 115, 0.48);
+      border-left: 6px solid var(--gold);
+    }
+
+    .note-card.muted {
+      border-color: rgba(147, 197, 253, 0.55);
+      border-left-color: var(--aqua);
+      box-shadow: none;
+    }
+
+    .practice-objective {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: var(--radius);
+      background: rgba(147, 197, 253, 0.16);
+      border: 1px solid rgba(147, 197, 253, 0.36);
+    }
+
+    .lessons {
+      display: grid;
+      gap: 1.35rem;
+    }
+
+    .lesson-card {
+      overflow: hidden;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .lesson-content {
+      padding: 1.1rem;
+    }
+
+    .video-wrap {
+      aspect-ratio: 16 / 9;
+      background: var(--blue);
+    }
+
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .prompt {
+      margin-top: 1rem;
+      padding: 0.9rem;
+      border-radius: var(--radius);
+      background: #f5f5f4;
+      border: 1px solid var(--muted);
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .worksheet-grid {
+      display: grid;
+      gap: 1rem;
+      margin: 1.4rem 0;
+    }
+
+    label {
+      display: grid;
+      gap: 0.45rem;
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    textarea {
+      min-height: 126px;
+      width: 100%;
+      resize: vertical;
+      padding: 0.85rem;
+      border: 1px solid #d6d3d1;
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--ink);
+      font: inherit;
+      line-height: 1.5;
+    }
+
+    textarea:focus {
+      outline: 3px solid rgba(147, 197, 253, 0.55);
+      border-color: var(--blue);
+    }
+
+    .status {
+      min-height: 1.5rem;
+      margin: 0.8rem 0 0;
+      color: var(--soft-ink);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .anchor-card {
+      position: relative;
+      padding: 1.3rem;
+      border: 1px solid rgba(212, 163, 115, 0.5);
+      background:
+        linear-gradient(135deg, rgba(212, 163, 115, 0.14), rgba(147, 197, 253, 0.14)),
+        var(--white);
+    }
+
+    .anchor-card::before {
+      content: "";
+      position: absolute;
+      inset: 0.65rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: calc(var(--radius) - 2px);
+      pointer-events: none;
+    }
+
+    .anchor-card p {
+      position: relative;
+      margin: 0;
+      color: var(--blue);
+      font-size: clamp(1.25rem, 6vw, 2.1rem);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .next-actions {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.2rem;
+    }
+
+    footer {
+      background: var(--blue);
+      color: #f5f5f4;
+    }
+
+    footer .section-inner {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (min-width: 720px) {
+      section,
+      footer {
+        padding: 4.8rem 1.6rem;
+      }
+
+      .hero-inner {
+        padding-inline: 1.6rem;
+      }
+
+      .note-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lesson-content {
+        padding: 1.35rem;
+      }
+
+      .worksheet-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .worksheet-grid label:nth-child(5) {
+        grid-column: 1 / -1;
+      }
+
+      .next-actions {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media print {
+      .hero,
+      .video-wrap,
+      .button-row,
+      .next-actions {
+        display: none;
+      }
+
+      body,
+      section,
+      footer {
+        background: #fff;
+        color: #000;
+      }
+
+      section,
+      footer {
+        padding: 1rem 0;
+      }
+
+      .note-card,
+      .lesson-card,
+      .anchor-card {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#practice">Skip to practice</a>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="brand">A Sovereign Spark℠ Practice from The Sovereign Source™</p>
+      <h1>Coming Within℠</h1>
+      <p class="subtitle">A Sovereign Spark℠ Practice for returning to yourself when approval, fear, or old expectations pull you away.</p>
+      <div class="button-row">
+        <a class="btn primary" href="#lesson-1">Start the practice</a>
+      </div>
+      <p class="meta-line">Approx. 15–20 minutes · 3 short lessons · 1 reflection practice</p>
+    </div>
+  </header>
+
+  <main id="practice">
+    <section class="warm-band" aria-labelledby="welcome-title">
+      <div class="section-inner narrow">
+        <p class="eyebrow">Welcome</p>
+        <h2 id="welcome-title">Welcome to Coming Within℠.</h2>
+        <p class="lead">This Sovereign Spark℠ Practice invites you to notice where you may have learned to leave yourself in order to be accepted, approved of, protected, or included.</p>
+        <p>There is no pressure to force a breakthrough or find a perfect answer. The goal is simply to notice, reflect, and practice one small return to yourself.</p>
+        <p>Coming Within℠ is a short self-reflection practice designed to help you notice where you may have learned to hide, please, shrink, perform, or trade authenticity for approval.</p>
+        <p>This practice is Pride-rooted but universal. It may speak to LGBTQ+ experiences of hiding, code-switching, and self-protection, while also supporting anyone who has learned to leave themselves in order to stay accepted, safe, or connected.</p>
+        <div class="practice-objective">
+          <strong>Practice objective:</strong> Notice one place where you may be living from outside approval instead of inner truth, and choose one small way to return to yourself.
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-band" aria-labelledby="avatar-title">
+      <div class="section-inner narrow">
+        <div class="note-card">
+          <p class="eyebrow">Avatar Note</p>
+          <h2 id="avatar-title">A quick note about my use of an avatar</h2>
+          <p>Some videos use an AI-assisted avatar or voice version of me. As a head and neck cancer survivor with lasting throat, speech, saliva gland, and facial/neck swelling challenges, this helps me share my work more consistently and accessibly.</p>
+          <p>The content, clinical framing, practices, and creative direction are mine. Thank you for understanding.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="warm-band" aria-labelledby="care-title">
+      <div class="section-inner">
+        <div class="note-grid">
+          <div class="note-card muted">
+            <p class="eyebrow">Gentle Care</p>
+            <h2 id="care-title">Go at your own pace</h2>
+            <p>This Sovereign Spark℠ Practice is for education and self-reflection. It is not therapy, diagnosis, treatment, or medical advice. Go at your own pace, skip anything that does not feel right for you, and seek professional or crisis support when needed.</p>
+          </div>
+          <div class="note-card muted">
+            <p class="eyebrow">Privacy</p>
+            <h2>Your reflections stay with you</h2>
+            <p>Your reflections stay in your browser unless you choose to copy, print, or download them. This page does not store personal responses in a database.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Lessons">
+      <div class="section-inner lessons">
+        <article class="lesson-card" id="lesson-1">
+          <div class="video-wrap">
+            <iframe src="https://app.heygen.com/embeds/82908a886cc34282aa6a9bbae62a2acd" title="Lesson 1 video: The Self You Had to Hide" allow="encrypted-media; fullscreen;" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="lesson-content">
+            <p class="eyebrow">Lesson 1</p>
+            <h2>The Self You Had to Hide</h2>
+            <p>Explore where you may have learned to hide, edit, shrink, or soften parts of yourself to stay connected or safe.</p>
+            <div class="prompt">Where did I learn that being fully myself might cost me connection?</div>
+          </div>
+        </article>
+
+        <article class="lesson-card" id="lesson-2">
+          <div class="video-wrap">
+            <iframe src="https://app.heygen.com/embeds/e0dc46c82393449b8714ba3854a2ad4a" title="Lesson 2 video: The Approval Costume" allow="encrypted-media; fullscreen;" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="lesson-content">
+            <p class="eyebrow">Lesson 2</p>
+            <h2>The Approval Costume</h2>
+            <p>Notice the roles you may wear to stay acceptable, wanted, safe, or unthreatening.</p>
+            <div class="prompt">What version of me shows up when I am trying not to disappoint, upset, or lose someone?</div>
+          </div>
+        </article>
+
+        <article class="lesson-card" id="lesson-3">
+          <div class="video-wrap">
+            <iframe src="https://app.heygen.com/embeds/db94f98336d840a59260ecbc012b43bb" title="Lesson 3 video: One Small Return" allow="encrypted-media; fullscreen;" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="lesson-content">
+            <p class="eyebrow">Lesson 3</p>
+            <h2>One Small Return</h2>
+            <p>Practice one small way to come back to yourself without forcing a dramatic reinvention.</p>
+            <div class="prompt">One small way I can come back to myself today is...</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="soft-band" aria-labelledby="worksheet-title">
+      <div class="section-inner">
+        <p class="eyebrow">Reflection Practice</p>
+        <h2 id="worksheet-title">The Coming Within℠ Check-In</h2>
+        <form id="worksheet" class="worksheet-grid">
+          <label>
+            Today, I notice I may be leaving myself when...
+            <textarea name="leaving" autocomplete="off"></textarea>
+          </label>
+          <label>
+            I might be afraid that if I stayed with myself...
+            <textarea name="afraid" autocomplete="off"></textarea>
+          </label>
+          <label>
+            What feels true right now is...
+            <textarea name="true" autocomplete="off"></textarea>
+          </label>
+          <label>
+            One small way I can come back to myself today is...
+            <textarea name="return" autocomplete="off"></textarea>
+          </label>
+          <label>
+            One support that might help is...
+            <textarea name="support" autocomplete="off"></textarea>
+          </label>
+        </form>
+        <div class="button-row">
+          <button class="btn" type="button" id="copyReflections">Copy my reflections</button>
+          <button class="btn secondary" type="button" id="printPage">Print this page</button>
+          <button class="btn secondary" type="button" id="downloadReflections">Download my reflections</button>
+        </div>
+        <p class="status" id="worksheetStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="warm-band" aria-labelledby="anchor-title">
+      <div class="section-inner narrow">
+        <p class="eyebrow">Today's Anchor</p>
+        <h2 id="anchor-title">Today’s Anchor</h2>
+        <div class="anchor-card" id="anchorCard">
+          <p>I do not have to abandon myself to belong.<br>I can return slowly.<br>I can tell myself the truth first.<br>One honest step is enough for today.</p>
+        </div>
+        <div class="button-row" style="margin-top: 1rem;">
+          <button class="btn" type="button" id="downloadAnchor">Download anchor card</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-band" aria-labelledby="next-title">
+      <div class="section-inner narrow">
+        <p class="eyebrow">Next Step</p>
+        <h2 id="next-title">Want to keep going?</h2>
+        <p>Coming Within℠ is one doorway. If this practice felt useful, you can continue with more Sovereign Spark℠ Practices, the larger Sovereign Source™ practice library, or Pozitive Approach Academy.</p>
+        <div class="next-actions">
+          <a class="btn" href="#">Explore Pozitive Approach Academy</a>
+          <a class="btn secondary" href="#">View more practices</a>
+          <a class="btn secondary" href="#">Visit The Sovereign Source™</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-inner">
+      <p><strong>Coming Within℠</strong> by The Sovereign Source™ / Pozitive Approach Counseling &amp; Consultation Services, LLC.</p>
+      <p>For education and self-reflection only. Not therapy, diagnosis, treatment, or medical advice.</p>
+      <p>© 2026 Pozitive Approach Counseling &amp; Consultation Services, LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const prompts = [
+      ["Today, I notice I may be leaving myself when...", "leaving"],
+      ["I might be afraid that if I stayed with myself...", "afraid"],
+      ["What feels true right now is...", "true"],
+      ["One small way I can come back to myself today is...", "return"],
+      ["One support that might help is...", "support"]
+    ];
+
+    const status = document.querySelector("#worksheetStatus");
+
+    function getReflectionText() {
+      const form = document.querySelector("#worksheet");
+      const data = new FormData(form);
+      return [
+        "Coming Within℠ Check-In",
+        "A Sovereign Spark℠ Practice from The Sovereign Source™",
+        "",
+        ...prompts.flatMap(([prompt, name]) => [
+          prompt,
+          String(data.get(name) || "").trim() || "[blank]",
+          ""
+        ])
+      ].join("\n");
+    }
+
+    function setStatus(message) {
+      status.textContent = message;
+      window.clearTimeout(setStatus.timer);
+      setStatus.timer = window.setTimeout(() => {
+        status.textContent = "";
+      }, 4200);
+    }
+
+    document.querySelector("#copyReflections").addEventListener("click", async () => {
+      const text = getReflectionText();
+      try {
+        if (!navigator.clipboard) {
+          throw new Error("Clipboard API unavailable");
+        }
+        await navigator.clipboard.writeText(text);
+        setStatus("Your reflections were copied.");
+      } catch {
+        const fallback = document.createElement("textarea");
+        fallback.value = text;
+        fallback.setAttribute("readonly", "");
+        fallback.style.position = "fixed";
+        fallback.style.left = "-9999px";
+        document.body.appendChild(fallback);
+        fallback.select();
+        const copied = document.execCommand("copy");
+        fallback.remove();
+        setStatus(copied ? "Your reflections were copied." : "Copy was not available in this browser. You can still select and copy your text manually.");
+      }
+    });
+
+    document.querySelector("#printPage").addEventListener("click", () => {
+      window.print();
+    });
+
+    document.querySelector("#downloadReflections").addEventListener("click", () => {
+      const blob = new Blob([getReflectionText()], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "coming-within-reflections.txt";
+      link.click();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setStatus("Your reflections were downloaded as a text file.");
+    });
+
+    document.querySelector("#downloadAnchor").addEventListener("click", () => {
+      const canvas = document.createElement("canvas");
+      const scale = 2;
+      canvas.width = 1080 * scale;
+      canvas.height = 1350 * scale;
+      const ctx = canvas.getContext("2d");
+      ctx.scale(scale, scale);
+      ctx.fillStyle = "#FAFAF9";
+      ctx.fillRect(0, 0, 1080, 1350);
+      const gradient = ctx.createLinearGradient(0, 0, 1080, 1350);
+      gradient.addColorStop(0, "rgba(212, 163, 115, 0.28)");
+      gradient.addColorStop(1, "rgba(147, 197, 253, 0.28)");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, 1080, 1350);
+      ctx.strokeStyle = "#d4a373";
+      ctx.lineWidth = 10;
+      ctx.strokeRect(70, 70, 940, 1210);
+      ctx.fillStyle = "#0f172a";
+      ctx.font = "700 66px system-ui, sans-serif";
+      ctx.fillText("Today's Anchor", 110, 170);
+      ctx.font = "800 64px system-ui, sans-serif";
+      const lines = [
+        "I do not have to",
+        "abandon myself",
+        "to belong.",
+        "",
+        "I can return slowly.",
+        "I can tell myself",
+        "the truth first.",
+        "",
+        "One honest step is",
+        "enough for today."
+      ];
+      let y = 315;
+      lines.forEach((line) => {
+        if (!line) {
+          y += 46;
+          return;
+        }
+        ctx.fillText(line, 110, y);
+        y += 82;
+      });
+      ctx.font = "600 31px system-ui, sans-serif";
+      ctx.fillStyle = "#57534e";
+      ctx.fillText("Coming Within℠ by The Sovereign Source™", 110, 1220);
+      const link = document.createElement("a");
+      link.href = canvas.toDataURL("image/png");
+      link.download = "coming-within-anchor-card.png";
+      link.click();
+      setStatus("Your anchor card download is ready.");
+    });
+  </script>
+</body>
+</html>
